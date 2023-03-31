@@ -4,7 +4,7 @@ Dependencies:
 
 Install Docker and Docker Compose: Make sure you have Docker and Docker Compose installed on your machine. Visit the official Docker website for installation instructions: https://docs.docker.com/engine/install/
 
-Install Git (Optional): If you want to clone the repository using Git, ensure Git is installed on your machine. You can download Git from: https://git-scm.com/downloads
+Install Git (Optional): If you want to clone the repository using Git, ensure Git is installed on your machine. 
 
 Step 1.
 Navigate to a suitable directory in your terminal and then run:
