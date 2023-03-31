@@ -1,0 +1,122 @@
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+html {
+  overflow-y: hidden;
+}
+
+h1 { color: #111;
+    font-size: 3em;
+    font-weight: bold;
+     letter-spacing: -1px;
+      line-height: 1;
+       text-align: center;
+        color: #4281a4;
+        text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+      }
+
+
+/* hide the code help element and its position but still allow it to be read by screen readers */
+#code-help {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+/* center the form horizontally and vertically */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_960_720.jpg");
+  background-size: cover;
+  background-position: center center;
+  filter: blur(10px);
+}
+
+/* form labels */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #4281a4;
+}
+
+/* input fields */
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px, solid, #111;
+}
+
+input:focus{
+  background-color: transparent;
+  outline-width: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px, solid, #111;
+}
+
+/* submit button */
+input[type="submit"] {
+  background-color: #4281a4;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: fit-content;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #4231a4;
+}
+
+/* error message */
+#message {
+  margin-top: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+/* seperate the form */
+.form_container {
+  background-color: #B1C1C1;
+  padding: 4em;
+  border-radius: 2em;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 40px #9ecaed;
+}
+.center{
+  margin-top: 1rem;
+  text-align: center;
+}
