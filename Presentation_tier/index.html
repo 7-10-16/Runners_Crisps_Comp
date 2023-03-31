@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Runners Crisps Competition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="form_container">
+    <h1>Runners Crisps Euro Competition</h1>
+    <form id="form" action="submit.php" method="post">
+        <label for="code">10-digit Hexadecimal Code:</label>
+        <input type="text" name="code" id="code" pattern="[A-Fa-f0-9]{10}" autocomplete="off" aria-describedby="code-help" required>
+        <span id="code-help">Enter a 10-digit code in hexadecimal format (0-9, A-F)</span>
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" autocomplete="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" autocomplete="email" required>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" autocomplete="street-address" required>
+
+        <label for="best_player">Best Player:</label>
+        <input type="text" name="best_player" id="best_player" required>
+        
+        <div class="center">
+        <input type="submit" name="submit" value="Submit Form">
+        </div>
+    </form>
+    </div>
+    <p id="message"></p>
+    <script>
+        const form = document.getElementById('form');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          try {
+            const response = await fetch('', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+              const result = await response.json();
+              message.textContent = `Voucher code: ${result.voucher}`;
+            } else {
+              message.textContent = 'An error occurred. Please try again.';
+            }
+          } catch (error) {
+            console.error(error);
+            message.textContent = 'An error occurred. Please try again.';
+          }
+        });
+      </script>
+</body>
+</html>
