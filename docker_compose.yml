@@ -5,10 +5,10 @@ services:
     ports:
       - "3000:3000"
   frontend:
-    build: ./Presentation_Tier
+    build: ./Presentation_tier
     ports:
       - "8000:80"
   data:
-    build: ./Data_Tier
+    build: ./Data_tier
     ports:
       - "27017:27017"
